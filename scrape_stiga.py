@@ -1,9 +1,6 @@
 import urllib
 import urllib.request
-from html.parser import HTMLParser
 from bs4 import BeautifulSoup
-import os
-from string import ascii_lowercase
 
 i = 1
 
