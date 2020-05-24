@@ -1,3 +1,4 @@
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/jankomag/ScrapingSTG/?ref=repository-badge)
 # ScrapingSTG
 <h3> Próbuję zrobić web scraper, żeby ściągnąc wszystkie zdjęcia automatycznie. </h3>
   <p>W sklepie jest ponad 700 produktów do których trzeba dodać zdjęcia, a każdy z nich ma ich kilka.</p>
