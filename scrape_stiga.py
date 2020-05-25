@@ -22,16 +22,17 @@ def main():
     import requests
     from bs4 import BeautifulSoup
 
-    root_url = "https://www.stiga.pl/"
+#     root_url = "https://www.stiga.pl/"
 
-    url = f"{root_url}sklep/koszenie-trawnika/agregaty-tnace/agregaty-tnace-park-villa"
-
+#     url = f"{root_url}sklep/koszenie-trawnika/agregaty-tnace/agregaty-tnace-park-villa"
+    
+    url = "https://www.stiga.pl/sklep/utrzymanie-porzadku/akcesoria-myjki-wysokocisnieniowe/srodek-chemiczny-do-silnych-zabrudzen"
     response = requests.get(url)
     response.raise_for_status()
 
     soup = BeautifulSoup(response.content, "html.parser")
 
-    for product in soup.findAll("div", {"class": "products__item"}):
+    for product in soup.findAll("div", {"class": "products_item"}):
         image_url = root_url + product.find("img")["data-src"]
         download_image(image_url)
 
