@@ -22,18 +22,17 @@ def main():
     import requests
     from bs4 import BeautifulSoup
 
-    # root_url = "https://www.stiga.pl/"
+    root_url = "https://www.stiga.pl/"
 
-    # url = f"{root_url}sklep/koszenie-trawnika/agregaty-tnace/agregaty-tnace-park-villa"
-    
-    url = "url = https://www.stiga.pl/sklep/koszenie-trawnika/agregaty-tnace/agregaty-tnace-park-villa/agregat-park-105-el-combi-qf"
+    url = f"{root_url}sklep/koszenie-trawnika/agregaty-tnace/agregaty-tnace-park-villa"
+
     response = requests.get(url)
     response.raise_for_status()
 
     soup = BeautifulSoup(response.content, "html.parser")
 
-    for product in soup.findAll("div", {"class": "owl-item"}):
-        image_url = product.find("img")["data-src"]
+    for product in soup.findAll("div", {"class": "products__item"}):
+        image_url = root_url + product.find("img")["data-src"]
         download_image(image_url)
 
     return 0
@@ -42,4 +41,3 @@ def main():
 if __name__ == "__main__":
     import sys
     sys.exit(main())
->>>>>>> Updating code
